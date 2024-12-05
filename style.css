@@ -1,0 +1,441 @@
+/* Estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #F15A29; /* Começa laranja */
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #F3E8EE;
+    transition: all 0.3s ease;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #F3E8EE;
+    text-align: center; /* Centraliza o conteúdo */
+}
+/* Seção de notícias */
+#noticias {
+    padding: 40px 20px;
+    background-color: #dfdfdf;
+    margin-top: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+
+
+.card-container {
+    display: flex; /* Flexbox para alinhar os cards horizontalmente */
+    gap: 20px;
+    justify-content: flex-start; /* Alinha os cards no início */
+    overflow-x: auto; /* Permite rolar os cards horizontalmente */
+    padding-bottom: 20px; /* Espaçamento no final */
+}
+/* Imagem do card (removido header e substituído por uma div) */
+/* Container de imagem ajustado */
+.card-img-container {
+    height: 180px; /* Altura fixa para o contêiner */
+    background-color: #2E2C2F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 5px; /* Tornar a imagem circular */
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para preencher o quadrado sem distorcer */
+}
+
+header.scrolled {
+    background-color: #2E2C2F; /* Troca para preto ao rolar */
+    padding: 10px 20px;
+}
+
+header.shrink {
+    padding: 10px;
+}
+
+.logo img {
+    width: 100px;
+    transition: width 0.3s ease;
+    margin-left: 50px;
+}
+
+header.shrink .logo img {
+    width: 60px;
+}
+
+header nav {
+    display: flex;
+    gap: 15px;
+}
+
+header nav a {
+    margin: 0 10px;
+    color: #F3E8EE;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    color: #BACDB0;
+}
+
+h1, h2 {
+    margin-bottom: 15px;
+}
+
+main {
+    padding-top: 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.intro, #sobre, #participantes {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+/* Estilos do Carrossel */
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    flex-shrink: 0; /* Impede que os cards encolham */
+}
+
+
+.card:hover {
+    transform: translateY(-8px); /* Agora a elevação ao hover é menor */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover p {
+    -webkit-line-clamp: 5; /* Exibe mais linhas ao passar o mouse */
+}
+
+/* Header do Card */
+.card header {
+    height: 180px;
+    background-color: #2E2C2F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card-header-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-body h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #2E2C2F;
+}
+
+.card-body p {
+    font-size: 14px;
+    color: #475B63;
+    line-height: 1.6;
+    max-height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.btn {
+    background: #F15A29;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #D1491D;
+}
+
+/* Rodapé do Card */
+.card footer {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card button:hover {
+    background-color: #D1491D; /* Tom mais escuro de laranja */
+}
+
+.card h3 {
+    margin: 10px 0;
+}
+
+.card p {
+    color: #555;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-btn.left {
+    left: 10px;
+}
+
+.carousel-btn.right {
+    right: 10px;
+}
+
+/* Seção Participantes */
+.participants {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Footer */
+footer {
+    background-color: #2E2C2F;
+    color: #F3E8EE;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    color: #F15A29; /* Laranja */
+    margin-bottom: 20px;
+}
+
+.section p {
+    color: #475B63; /* Cinza médio */
+}
+
+/* Cards */
+.project-cards, .team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Seção de Participantes */
+.team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#projeto-detalhado {
+    background-color: #f9f9f9; /* Fundo suave e clean */
+    padding: 40px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.4rem;
+    color: #2E2C2F;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.project-description {
+    font-size: 1.1rem;
+    color: #4A4A4A;
+    line-height: 1.7;
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.project-images {
+    flex: 1;
+    max-width: 48%;
+}
+
+.project-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-img:hover {
+    transform: scale(1.05);
+}
+
+.project-info {
+    flex: 1;
+    max-width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h3 {
+    font-size: 2rem;
+    color: #2E2C2F;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.team-members {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.team-member {
+    text-align: center;
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.team-member img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #E8E8E8;
+    transition: border-color 0.3s ease;
+}
+
+.team-member img:hover {
+    border-color: #729B79;
+}
+
+.team-member p {
+    margin-top: 10px;
+    color: #4A4A4A;
+    font-weight: bold;
+}
+
+.technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.technologies .tech-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E8E8E8;
+    color: #2E2C2F;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 150px;
+    min-width: 120px;
+}
+
+.technologies .tech-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.technologies .tech-item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+}
+
+.technologies .tech-item span {
+    font-size: 1.2rem;
+}
+
+.technologies .tech-item .tech-name {
+    font-weight: normal;
+    font-size: 1rem;
+    color: #4A4A4A;
+}
+
